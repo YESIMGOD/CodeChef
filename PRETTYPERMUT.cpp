@@ -13,32 +13,39 @@ using namespace std;
 #define ran(v) for(auto &i:v)
 #define mem(dp) memset(dp,-1,sizeof(dp))
 /*
-    YESIMGOD
+     mang3ky0u
 */
 
 void solve()
 {
-    int n;cin>>n;
+    int n;
+    cin>>n;
     int arr[n];
+    if(n%2==1)
+    {
+        int a=n;
+        for(int i=0;i<n;i++)
+        {
+            cout<<a<<" ";
+            a--;
+        }
+        cout<<endl;
+        return;
+    }
+    if (n==2)
+    {
+        cout<<-1<<endl;
+        return;
+    }
+    int y=1;
     for(int i=0;i<n;i++)
     {
-        arr[i]=i+1;
+        arr[i]=y;
+        y++;
     }
-    if(n%2==0)
-    {
-        for(int i=0;i<n;i+=2)
-        {
-            swap(arr[i],arr[i+1]);
-        }
-    }
-    else
-    {
-        for(int i=0;i<n-1;i++)
-        {
-            swap(arr[i],arr[i+1]);
-        }
-        swap(arr[n-2],arr[n-1]);
-    }
+    arr[0]=2;
+    arr[1]=3;
+    arr[2]=1;
     for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
