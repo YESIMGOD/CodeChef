@@ -26,12 +26,14 @@ int main()
             continue;
         }
         else if(n==3)
-        {
+        
             cout<<min(ar[1] -ar[0],ar[2]-ar[1])<<endl;
             continue;
         }
         for(ll i=0;i<n-1;i++)
-        {r1 += abs(ar[i]-ar[(n-1)/2]);}
+        {
+            r1 += abs(ar[i]-ar[(n-1)/2]);
+        }
         for(ll i=1;i<n;i++)
             r2 += abs(ar[i]-ar[1+(n-1)/2]);
         o=min(r1,r2);
